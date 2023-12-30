@@ -182,6 +182,7 @@ void pc_turn_9(){
 }
 
 void pc_turn(){
+    int i,j;
     for (i=0;i<9;i++){
         if(full_table[cell][i]=='.'){
             full_table[cell][i]='x';
@@ -279,7 +280,7 @@ int main(int argc, char* argv[]){
         if (p_block==9){
             pc_turn_9();
         }else{
-            pc_turn()
+            pc_turn();
         }
         fclose(fp);
         fp = fopen("surper_morpion.dot", "w");
