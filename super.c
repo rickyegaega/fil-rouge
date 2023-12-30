@@ -158,7 +158,7 @@ int palyer_turn(){
     }
 }
 
-void pc_turn_9(){
+void pc_turn_any(){
     int i,j;
     for(i=0;i<9;i++){
         if(full_table[i][0]=='O'||full_table[i][0]=='X'){
@@ -181,7 +181,7 @@ void pc_turn_9(){
     }
 }
 
-void pc_turn(){
+void pc_turn_num(){
     int i,j;
     for (i=0;i<9;i++){
         if(full_table[cell][i]=='.'){
@@ -199,6 +199,23 @@ void pc_turn(){
         }
     }
 }
+
+void pc_turn(){
+    printf("pc's turn %d\n",p_block);
+    if (p_block==9){
+        pc_turn_any();
+    }else{
+        pc_turn_num();
+    }
+}
+
+void write_gen(){
+    fp = fopen("surper_morpion.dot", "w");
+    gen_table(full_table);
+    fclose(fp);
+    system("dot -Tpng surper_morpion.dot -o g.png");
+}
+
 // for debug
 void change_type(char *table){
     int i,j;
@@ -237,7 +254,6 @@ void change_type(char *table){
     }
 }
 
-
 int main(int argc, char* argv[]){
     fp = fopen("surper_morpion.dot", "w");
     int i,j;
@@ -255,44 +271,29 @@ int main(int argc, char* argv[]){
             printf("%s\n",full_table[i]);
         }
     }
-    
     for(i=0; i<81; i++){
         while(1){
             if(palyer_turn())break;
         }
-        fp = fopen("surper_morpion.dot", "w");
-        gen_table(full_table);
-        
         for(i=0;i<9;i++){
             table[i]=full_table[i][0];
         }
         judge(table);
-
         //次選べるブロックを選択
         if(full_table[cell][0]=='O' || full_table[cell][0]=='X' || not_null(full_table[cell])){
             p_block=9;
         }else{
             p_block=cell;
         }
+        //pc turn
+        pc_turn();
+        //write dot and gen png
+        write_gen();
 
-        //pcがプレー
-        printf("pc's turn %d\n",p_block);
-        if (p_block==9){
-            pc_turn_9();
-        }else{
-            pc_turn();
-        }
-        fclose(fp);
-        fp = fopen("surper_morpion.dot", "w");
-        gen_table(full_table);
-        
-        fclose(fp);
-        system("dot -Tpng surper_morpion.dot -o g.png");
         for(i=0;i<9;i++){
             table[i]=full_table[i][0];
         }
         judge(table);
     }
-    
     return 0;
 }
