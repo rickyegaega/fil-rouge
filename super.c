@@ -7,6 +7,8 @@ char full_table[9][9];
 char player;
 int p_block=9;
 char start = 'o';
+int block;
+int cell;
 
 void gen_minitable(char* table){
     int n = 0;
@@ -120,53 +122,142 @@ char judge(char* table){
     return table[0];
 }
 
+int palyer_turn(){
+    int rtn = 0;
+    char area[2];
+    char place[3];
+    printf("please enter, block is %d\n",p_block);
+    rtn = scanf("%s %s", area, place);
+    if (rtn == EOF)
+    {
+        printf("EOF was detected.\n");
+        exit (0);
+    }
+    block=area[0]-48;
+    cell=(3-(place[1]-48))*3+(place[0]-97);
+    if(block<0||block>8){
+        printf("typing error block\n");
+        return 0;
+    }
+    if(cell<0||cell>8){
+        printf("typing error cell\n");
+        return 0;
+    }
+    if (judge_block(block)){
+        if(full_table[block][cell]=='.'){
+            full_table[block][cell]='o';
+            //ビンゴしたブロックがあったら塗りつぶす
+            full_table[block][0]=judge(full_table[block]);
+            return 1;
+        }else{
+            printf("cell filled\n");
+            return 0;
+        }
+    }else{
+        printf("block error! you shoud play on block%d\n",p_block);
+    }
+}
+
+void pc_turn_9(){
+    int i,j;
+    for(i=0;i<9;i++){
+        if(full_table[i][0]=='O'||full_table[i][0]=='X'){
+            i++;
+        }
+        for(j=0;j<9;j++){
+            if(full_table[i][j]=='.'){
+                full_table[i][j]='x';
+                //ビンゴしたブロックがあったら塗りつぶす
+                full_table[i][0]=judge(full_table[i]);
+                printf("pc choose %d %d\n",i,j);
+                if(full_table[j][0]=='O' || full_table[j][0]=='X'|| not_null(full_table[j])){
+                    p_block=9;
+                }else{
+                    p_block=j;
+                }
+                return;
+            }
+        }
+    }
+}
+
+void pc_turn(){
+    for (i=0;i<9;i++){
+        if(full_table[cell][i]=='.'){
+            full_table[cell][i]='x';
+            printf("changed %c\n",full_table[cell][i]);
+            //ビンゴしたブロックがあったら塗りつぶす
+            full_table[cell][0]=judge(full_table[cell]);
+            printf("pc choose %d %d\n",cell,i);
+            if(full_table[i][0]=='O' || full_table[i][0]=='X'|| not_null(full_table[i])){
+                p_block=9;
+            }else{
+                p_block=i;
+            }
+            return;
+        }
+    }
+}
+// for debug
+void change_type(char *table){
+    int i,j;
+    int x=0,y=0;
+    for (i=0; i<strlen(table); i++){
+        if(table[i]=='O'){
+            full_table[x][y]='O';
+            x++;
+        }else if(table[i]=='X'){
+            full_table[x][y]='X';
+            x++;
+        }else if(table[i]=='x'){
+            full_table[x][y]='x';
+            y++;
+            if(y%9==0){
+                y=0;
+                x++;
+            }
+        }else if(table[i]=='o'){
+            full_table[x][y]='o';
+            y++;
+            if(y%9==0){
+                y=0;
+                x++;
+            }
+        }else if(table[i]>='1' && table[i]<='9'){
+            for(j=0; j<table[i]-48; j++){
+                full_table[x][y]='.';
+                y++;
+                if(y%9==0){
+                    y=0;
+                    x++;
+                }
+            }
+        }
+    }
+}
+
+
 int main(int argc, char* argv[]){
     fp = fopen("surper_morpion.dot", "w");
     int i,j;
     int tmp;
     int flag;
-    char winner;
-    char area[2];
-    char place[3];
-    int block;
-    int cell;
     char table[9];
-    int rtn = 0;
-    for(i=0;i<81;i++){
-        full_table[i/9][i%9]='.';
+    if(argc==1){
+        for(i=0;i<81;i++){
+            full_table[i/9][i%9]='.';
+        }
+    }else{//for debug
+        char *tmp_table=argv[1];
+        change_type(tmp_table);
+        for (int i=0; i<9; i++){
+            printf("%s\n",full_table[i]);
+        }
     }
+    
     for(i=0; i<81; i++){
         while(1){
-            printf("please enter, block is %d\n",p_block);
-            rtn = scanf("%s %s", area, place);
-            if (rtn == EOF)
-            {
-                printf("EOF was detected.\n");
-                exit (0);
-            }
-            block=area[0]-48;
-            cell=(3-(place[1]-48))*3+(place[0]-97);
-            if(block<0||block>8){
-                printf("typing error block\n");
-                continue;
-            }
-            if(cell<0||cell>8){
-                printf("typing error cell\n");
-                continue;
-            }
-            if (judge_block(block)){
-                if(full_table[block][cell]=='.'){
-                    full_table[block][cell]='o';
-                    //ビンゴしたブロックがあったら塗りつぶす
-                    full_table[block][0]=judge(full_table[block]);
-                    break;
-                }else{
-                    printf("cell filled\n");
-                    continue;
-                }
-            }else{
-                printf("block error! you shoud play on block%d\n",p_block);
-            }
+            if(palyer_turn())break;
         }
         fp = fopen("surper_morpion.dot", "w");
         gen_table(full_table);
@@ -186,46 +277,9 @@ int main(int argc, char* argv[]){
         //pcがプレー
         printf("pc's turn %d\n",p_block);
         if (p_block==9){
-            flag=0;
-            for(i=0;i<9;i++){
-                if(full_table[i][0]=='O'||full_table[i][0]=='X'){
-                    i++;
-                }
-                for(j=0;j<9;j++){
-                    if(full_table[i][j]=='.'){
-                        full_table[i][j]='x';
-                        //ビンゴしたブロックがあったら塗りつぶす
-                        full_table[i][0]=judge(full_table[i]);
-                        printf("pc choose %d %d\n",i,j);
-                        if(full_table[j][0]=='O' || full_table[j][0]=='X'|| not_null(full_table[j])){
-                            p_block=9;
-                        }else{
-                            p_block=j;
-                        }
-                        flag=1;
-                        break;
-                    }
-                }
-                if(flag){
-                    break;
-                }
-            }
+            pc_turn_9();
         }else{
-            for (i=0;i<9;i++){
-                if(full_table[cell][i]=='.'){
-                    full_table[cell][i]='x';
-                    printf("changed %c\n",full_table[cell][i]);
-                    //ビンゴしたブロックがあったら塗りつぶす
-                    full_table[cell][0]=judge(full_table[cell]);
-                    printf("pc choose %d %d\n",cell,i);
-                    if(full_table[i][0]=='O' || full_table[i][0]=='X'|| not_null(full_table[i])){
-                        p_block=9;
-                    }else{
-                        p_block=i;
-                    }
-                    break;
-                }
-            }
+            pc_turn()
         }
         fclose(fp);
         fp = fopen("surper_morpion.dot", "w");
