@@ -379,6 +379,7 @@ int score(char table[9][9], int block, int cell, int depth){
         if(depth==0){
             return score_tmp;
         }
+        // printf("%d mul is %d\n",point(table, block, cell),mul);
         return point(table, block, cell)*mul+score_tmp;
     }else{
         for(i=0;i<9;i++){
@@ -404,6 +405,7 @@ int score(char table[9][9], int block, int cell, int depth){
         if(depth==0){
             return score_tmp;
         }
+        // printf("%d mul is %d\n",point(table, block, cell),mul);
         return point(table, block, cell)*mul+score_tmp;
     }
 }
@@ -458,10 +460,9 @@ int main(int argc, char* argv[]){
     block = tmp/10 -1;
     cell = tmp%10 -1;
     start_player(strtok(NULL, " ")[0]);
-    
+    score(full_table,block,cell,0);
     // printf("max score is %d\n",score(full_table,block,cell,0));
-    // printf("best is %d %d\n",pc_block+1,pc_cell+1);
-    printf("%d %d\n",pc_block+1,pc_cell+1);
+    printf("best is %d %d\n",pc_block+1,pc_cell+1);
 
     //write dot and gen png
     write_gen();
