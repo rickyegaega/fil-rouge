@@ -33,7 +33,6 @@ int max(int* table,int size){
     return n;
 }
 
-
 void gen_minitable(char* table){
     int n = 0;
     int i;
@@ -146,103 +145,32 @@ char judge(char* table){
     return table[0];
 }
 
-int palyer_turn(){
-    int rtn = 0;
-    char area[2];
-    char place[3];
-    printf("please enter, block is %d\n",p_block);
-    rtn = scanf("%s %s", area, place);
-    if (rtn == EOF)
-    {
-        printf("EOF was detected.\n");
-        exit (0);
-    }
-    block=area[0]-48;
-    cell=(3-(place[1]-48))*3+(place[0]-97);
-    if(block<0||block>8){
-        printf("typing error block\n");
-        return 0;
-    }
-    if(cell<0||cell>8){
-        printf("typing error cell\n");
-        return 0;
-    }
-    if (judge_block(block)){
-        if(full_table[block][cell]=='.'){
-            full_table[block][cell]='o';
-            //ビンゴしたブロックがあったら塗りつぶす
-            full_table[block][0]=judge(full_table[block]);
-            return 1;
-        }else{
-            printf("cell filled\n");
-            return 0;
-        }
+void write_gen(){
+    fp = fopen("surper_morpion.dot", "w");
+    gen_table(full_table);
+    fclose(fp);
+    system("dot -Tpng surper_morpion.dot -o g.png");
+}
+
+void start_player(char player){
+    if (player=='x'){
+        start = 'x';
+        opponent = 'o';
+    }else if (player=='o'){
+        start = 'o';
+        opponent = 'x';
     }else{
-        printf("block error! you shoud play on block%d\n",p_block);
-    }
-}
-
-void pc_turn_any(){
-    int i,j;
-    for(i=0;i<9;i++){
-        if(full_table[i][0]=='O'||full_table[i][0]=='X'){
-            i++;
-        }
-        for(j=0;j<9;j++){
-            if(full_table[i][j]=='.'){
-                full_table[i][j]='x';
-                //ビンゴしたブロックがあったら塗りつぶす
-                full_table[i][0]=judge(full_table[i]);
-                printf("pc choose %d %d\n",i,j);
-                if(full_table[j][0]=='O' || full_table[j][0]=='X'|| not_null(full_table[j])){
-                    p_block=9;
-                }else{
-                    p_block=j;
-                }
-                return;
-            }
-        }
-    }
-}
-
-void pc_turn_num(){
-    int i,j;
-    for (i=0;i<9;i++){
-        if(full_table[cell][i]=='.'){
-            full_table[cell][i]='x';
-            printf("changed %c\n",full_table[cell][i]);
-            //ビンゴしたブロックがあったら塗りつぶす
-            full_table[cell][0]=judge(full_table[cell]);
-            printf("pc choose %d %d\n",cell,i);
-            if(full_table[i][0]=='O' || full_table[i][0]=='X'|| not_null(full_table[i])){
-                p_block=9;
-            }else{
-                p_block=i;
-            }
-            return;
-        }
-    }
-}
-
-void pc_turn(){
-    printf("pc's turn %d\n",p_block);
-    if (p_block==9){
-        pc_turn_any();
-    }else{
-        pc_turn_num();
+        printf("please enter right player\n");
+        exit(1);
     }
 }
 
 int bingo(int x, int y ,int z, char *table){
     char c = same(x,y,z,table);
-    if(c==start){
+    if(c==start||c==opponent){
         return 5;
-    }else if(c==opponent){
-        return -5;
-    }else if(c==start-32){
+    }else if(c==start-32||c==opponent-32){
         return 10000;
-    }else if(c==opponent-32){
-        return -10000;
     }
     return 0;
 }
@@ -297,13 +225,6 @@ int bingo_point(char* table, int n){
     return 0;
 }
 
-void write_gen(){
-    fp = fopen("surper_morpion.dot", "w");
-    gen_table(full_table);
-    fclose(fp);
-    system("dot -Tpng surper_morpion.dot -o g.png");
-}
-
 int reach(int x, int y, int z, char* table){
     if(table[z]=='.'){
         table[z]=switch_player(table[x]);
@@ -312,25 +233,17 @@ int reach(int x, int y, int z, char* table){
         table[y]=switch_player(table[x]);
     }
     if(table[x]==table[y]&&bingo_point(table, z)==0){//リーチかつ敵のリーチと一致していない
-        if(table[x]==start){
+        if(table[x]==start||table[x]==opponent){
             return 2;
-        }else if(table[x]==opponent){
-            return 'X';
-        }else if(table[x]==start-32){
+        }else if(table[x]==start-32||table[x]==opponent-32){
             return 4;
-        }else if(table[x]==opponent-32){
-            return -4;
         }
     }
     if(table[x]==table[z]&&bingo_point(table, y)==0){
-        if(table[x]==start){
+        if(table[x]==start||table[x]==opponent){
             return 2;
-        }else if(table[x]==opponent){
-            return 'X';
-        }else if(table[x]==start-32){
+        }else if(table[x]==start-32||table[x]==opponent-32){
             return 4;
-        }else if(table[x]==opponent-32){
-            return -4;
         }
     }
     return 0;
@@ -395,10 +308,11 @@ int point(char full_table_tmp[9][9], int block, int cell){
     }
     //ブロックをとった場合
     if(bingo_point(full_table_tmp[block],cell)!=0){
-        total_point += bingo_point(full_table_tmp[block],cell);
+        total_point += 5;
         //corner or center
         if(block==4)total_point += 10;
         if(block==0,block==2,block==6,block==8)total_point += 3;
+
         for(int i=0;i<9;i++){
             if(full_table_tmp[i][0]=='O'||full_table_tmp[i][0]=='X'){
                 table[i]=full_table_tmp[i][0];
@@ -407,7 +321,7 @@ int point(char full_table_tmp[9][9], int block, int cell){
             }
         }
         if(bingo_point(table,block)!=0){
-            return bingo_point(table,block);
+            return 1000000;
         }else{
             total_point += reach_point(table, block);
         }
@@ -417,86 +331,80 @@ int point(char full_table_tmp[9][9], int block, int cell){
     return total_point;
 }
 
-void start_player(char player){
-    if (player=='x'){
-        start = 'x';
-        opponent = 'o';
-    }else if (player=='o'){
-        start = 'o';
-        opponent = 'x';
-    }else{
-        printf("please enter right player\n");
-        exit(1);
-    }
-}
-
-int score(char table[9][9], int block, int cell){
-    static int depth=0;
-    int i,j,n;
-    char player;
+int score(char table[9][9], int block, int cell, int depth){
+    int i,j,n,mul;
     char tmp_table[9][9];
     int tmp;
     int score_tmp=0;
     int best_block;
     int best_cell;
-    if(depth==max_depth){
-        return point(table, block, cell);
-    }
-    depth++;
+
     if(depth%2==1){
         player=start;
+        mul=1;
     }else{
+        mul=-1;
         player=opponent;
     }
-    printf("%c\n",player);
+
+    if(depth==max_depth){
+        // printf("point is %d mul is %d\n",point(table, block, cell),mul);
+        return point(table, block, cell);
+    }
+    //ビンゴまたは埋まったブロックでない
     if(table[cell][0]=='X'||table[cell][0]=='O'||not_null(table[cell])){
         for(i=0;i<9;i++){
             for(j=0;j<9;j++){
                 if(table[i][j]=='.'){
+
+                    //テーブルのコピー
                     for(n=0;n<9;n++){
                         strcpy(tmp_table[n],table[n]);
                     }
                     tmp_table[i][j]=player;
-                    tmp=score(tmp_table,i,j);
-                    if(player==start && tmp>score_tmp){
+                    //ビンゴの塗りつぶし
+                    tmp_table[i][0]=judge(tmp_table[i]);
+                    tmp=score(tmp_table,i,j,depth+1);
+                    // printf("score is %d mul is %d\n",tmp,mul);
+                    if(tmp>score_tmp*mul){
                         best_block=i;
                         best_cell=j;
-                        score_tmp=tmp;
-                    }
-                    if(player!=start && tmp<score_tmp){
-                        best_block=i;
-                        best_cell=j;
-                        score_tmp=tmp;
+                        score_tmp=tmp*mul;
                     }
                 }
             }
         }
         pc_block=best_block;
         pc_cell=best_cell;
-        return point(table, block, cell)+score_tmp;
+        if(depth==0){
+            return score_tmp;
+        }
+        return point(table, block, cell)*mul+score_tmp;
     }else{
         for(i=0;i<9;i++){
             if(table[cell][i]=='.'){
+                //テーブルのコピー
                 for(n=0;n<9;n++){
                     strcpy(tmp_table[n],table[n]);
                 }
                 tmp_table[cell][i]=player;
-                tmp=score(tmp_table,cell,i);
-                if(player==start && tmp>score_tmp){
-                    score_tmp=tmp;
+                //ビンゴの塗りつぶし
+                tmp_table[cell][0]=judge(tmp_table[cell]);
+                tmp=score(tmp_table,cell,i,depth+1)*mul;
+                // printf("score is %d mul is %d\n",tmp,mul);
+                if(tmp>score_tmp*mul){
+                    score_tmp=tmp*mul;
                     best_block=cell;
                     best_cell=i;
-                }
-                if(player!=start && tmp<score_tmp){
-                    score_tmp=tmp;
-                    best_block=cell;
-                    best_cell=i;                    
                 }
             }
         }
         pc_block=best_block;
         pc_cell=best_cell;
-        return point(table, block, cell)+score_tmp;
+        if(depth==0){
+            return score_tmp;
+        }
+        return point(table, block, cell)*mul+score_tmp;
     }
 }
 
@@ -550,8 +458,12 @@ int main(int argc, char* argv[]){
     block = tmp/10 -1;
     cell = tmp%10 -1;
     start_player(strtok(NULL, " ")[0]);
-        
-    printf("max score is %d\n",score(full_table,block,cell));
-    printf("best is %d %d\n",pc_block+1,pc_cell+1);
+    
+    // printf("max score is %d\n",score(full_table,block,cell,0));
+    // printf("best is %d %d\n",pc_block+1,pc_cell+1);
+    printf("%d %d\n",pc_block+1,pc_cell+1);
+
+    //write dot and gen png
+    write_gen();
     return 0;
 }
