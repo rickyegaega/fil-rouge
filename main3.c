@@ -10,7 +10,7 @@ char start;
 char opponent;
 int block;
 int cell;
-int max_depth=2;
+int max_depth=6;
 int pc_block;
 int pc_cell;
 
@@ -335,7 +335,7 @@ int score(char table[9][9], int block, int cell, int depth){
     int i,j,n,mul;
     char tmp_table[9][9];
     int tmp;
-    int score_tmp=0;
+    int score_tmp=-10000;
     int best_block;
     int best_cell;
 
@@ -374,9 +374,10 @@ int score(char table[9][9], int block, int cell, int depth){
                 }
             }
         }
-        pc_block=best_block;
-        pc_cell=best_cell;
+        
         if(depth==0){
+            pc_block=best_block;
+            pc_cell=best_cell;
             return score_tmp;
         }
         // printf("%d mul is %d\n",point(table, block, cell),mul);
@@ -397,12 +398,14 @@ int score(char table[9][9], int block, int cell, int depth){
                     score_tmp=tmp*mul;
                     best_block=cell;
                     best_cell=i;
+
+                    
                 }
             }
         }
-        pc_block=best_block;
-        pc_cell=best_cell;
         if(depth==0){
+            pc_block=best_block;
+            pc_cell=best_cell;
             return score_tmp;
         }
         // printf("%d mul is %d\n",point(table, block, cell),mul);
@@ -463,7 +466,8 @@ int main(int argc, char* argv[]){
     score(full_table,block,cell,0);
     // printf("max score is %d\n",score(full_table,block,cell,0));
     printf("best is %d %d\n",pc_block+1,pc_cell+1);
-
+    full_table[pc_block][pc_cell]=start;
+    full_table[pc_block][0]=judge(full_table[pc_block]);
     //write dot and gen png
     write_gen();
     return 0;
