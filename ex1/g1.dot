@@ -1,0 +1,1075 @@
+digraph  {
+  m_init [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_init</TD></TR>
+  </TABLE>>];
+  m_0 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_0</TD></TR>
+  </TABLE>>];
+m_init-> m_0 [label=" 0,1"];  m_1 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_1</TD></TR>
+  </TABLE>>];
+m_0-> m_1 [label=" 0,2"];
+  m_2 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_2</TD></TR>
+  </TABLE>>];
+m_1-> m_2 [label=" 2,1"];
+  m_3 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_3</TD></TR>
+  </TABLE>>];
+m_2-> m_3 [label=" 2,2"];
+m_3 [xlabel="-1"]
+m_2 [xlabel="-1"]
+  m_4 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_4</TD></TR>
+  </TABLE>>];
+m_1-> m_4 [label=" 2,2"];
+  m_5 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_5</TD></TR>
+  </TABLE>>];
+m_4-> m_5 [label=" 2,1"];
+m_5 [xlabel="0"]
+m_4 [xlabel="0"]
+m_1 [xlabel="0"]
+  m_6 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_6</TD></TR>
+  </TABLE>>];
+m_0-> m_6 [label=" 2,1"];
+  m_7 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_7</TD></TR>
+  </TABLE>>];
+m_6-> m_7 [label=" 0,2"];
+  m_8 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_8</TD></TR>
+  </TABLE>>];
+m_7-> m_8 [label=" 2,2"];
+m_8 [xlabel="-1"]
+m_7 [xlabel="-1"]
+  m_9 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_9</TD></TR>
+  </TABLE>>];
+m_6-> m_9 [label=" 2,2"];
+  m_10 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_10</TD></TR>
+  </TABLE>>];
+m_9-> m_10 [label=" 0,2"];
+m_10 [xlabel="0"]
+m_9 [xlabel="0"]
+m_6 [xlabel="0"]
+  m_11 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_11</TD></TR>
+  </TABLE>>];
+m_0-> m_11 [label=" 2,2"];
+m_11 [xlabel="-1"]
+m_0 [xlabel="-1"]
+  m_12 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_12</TD></TR>
+  </TABLE>>];
+m_init-> m_12 [label=" 0,2"];  m_13 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_13</TD></TR>
+  </TABLE>>];
+m_12-> m_13 [label=" 0,1"];
+  m_14 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_14</TD></TR>
+  </TABLE>>];
+m_13-> m_14 [label=" 2,1"];
+  m_15 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_15</TD></TR>
+  </TABLE>>];
+m_14-> m_15 [label=" 2,2"];
+m_15 [xlabel="-1"]
+m_14 [xlabel="-1"]
+  m_16 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_16</TD></TR>
+  </TABLE>>];
+m_13-> m_16 [label=" 2,2"];
+  m_17 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_17</TD></TR>
+  </TABLE>>];
+m_16-> m_17 [label=" 2,1"];
+m_17 [xlabel="-1"]
+m_16 [xlabel="-1"]
+m_13 [xlabel="-1"]
+  m_18 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_18</TD></TR>
+  </TABLE>>];
+m_12-> m_18 [label=" 2,1"];
+  m_19 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_19</TD></TR>
+  </TABLE>>];
+m_18-> m_19 [label=" 0,1"];
+  m_20 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_20</TD></TR>
+  </TABLE>>];
+m_19-> m_20 [label=" 2,2"];
+m_20 [xlabel="-1"]
+m_19 [xlabel="-1"]
+  m_21 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_21</TD></TR>
+  </TABLE>>];
+m_18-> m_21 [label=" 2,2"];
+  m_22 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_22</TD></TR>
+  </TABLE>>];
+m_21-> m_22 [label=" 0,1"];
+m_22 [xlabel="-1"]
+m_21 [xlabel="-1"]
+m_18 [xlabel="-1"]
+  m_23 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_23</TD></TR>
+  </TABLE>>];
+m_12-> m_23 [label=" 2,2"];
+m_23 [xlabel="-1"]
+m_0 [xlabel="-1"]
+  m_24 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_24</TD></TR>
+  </TABLE>>];
+m_init-> m_24 [label=" 2,1"];  m_25 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_25</TD></TR>
+  </TABLE>>];
+m_24-> m_25 [label=" 0,1"];
+  m_26 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_26</TD></TR>
+  </TABLE>>];
+m_25-> m_26 [label=" 0,2"];
+  m_27 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_27</TD></TR>
+  </TABLE>>];
+m_26-> m_27 [label=" 2,2"];
+m_27 [xlabel="-1"]
+m_26 [xlabel="-1"]
+  m_28 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_28</TD></TR>
+  </TABLE>>];
+m_25-> m_28 [label=" 2,2"];
+m_28 [xlabel="1"]
+m_25 [xlabel="1"]
+  m_29 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_29</TD></TR>
+  </TABLE>>];
+m_24-> m_29 [label=" 0,2"];
+  m_30 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_30</TD></TR>
+  </TABLE>>];
+m_29-> m_30 [label=" 0,1"];
+  m_31 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_31</TD></TR>
+  </TABLE>>];
+m_30-> m_31 [label=" 2,2"];
+m_31 [xlabel="-1"]
+m_30 [xlabel="-1"]
+  m_32 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_32</TD></TR>
+  </TABLE>>];
+m_29-> m_32 [label=" 2,2"];
+m_32 [xlabel="1"]
+m_29 [xlabel="1"]
+  m_33 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_33</TD></TR>
+  </TABLE>>];
+m_24-> m_33 [label=" 2,2"];
+m_33 [xlabel="-1"]
+m_0 [xlabel="-1"]
+  m_34 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_34</TD></TR>
+  </TABLE>>];
+m_init-> m_34 [label=" 2,2"];  m_35 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_35</TD></TR>
+  </TABLE>>];
+m_34-> m_35 [label=" 0,1"];
+  m_36 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_36</TD></TR>
+  </TABLE>>];
+m_35-> m_36 [label=" 0,2"];
+  m_37 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_37</TD></TR>
+  </TABLE>>];
+m_36-> m_37 [label=" 2,1"];
+m_37 [xlabel="-1"]
+m_36 [xlabel="-1"]
+  m_38 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_38</TD></TR>
+  </TABLE>>];
+m_35-> m_38 [label=" 2,1"];
+m_38 [xlabel="1"]
+m_35 [xlabel="1"]
+  m_39 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_39</TD></TR>
+  </TABLE>>];
+m_34-> m_39 [label=" 0,2"];
+  m_40 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_40</TD></TR>
+  </TABLE>>];
+m_39-> m_40 [label=" 0,1"];
+  m_41 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_41</TD></TR>
+  </TABLE>>];
+m_40-> m_41 [label=" 2,1"];
+m_41 [xlabel="0"]
+m_40 [xlabel="0"]
+  m_42 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_42</TD></TR>
+  </TABLE>>];
+m_39-> m_42 [label=" 2,1"];
+m_42 [xlabel="1"]
+m_39 [xlabel="1"]
+  m_43 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_43</TD></TR>
+  </TABLE>>];
+m_34-> m_43 [label=" 2,1"];
+  m_44 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">.</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_44</TD></TR>
+  </TABLE>>];
+m_43-> m_44 [label=" 0,1"];
+  m_45 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_45</TD></TR>
+  </TABLE>>];
+m_44-> m_45 [label=" 0,2"];
+m_45 [xlabel="0"]
+m_44 [xlabel="0"]
+  m_46 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">.</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="red" colspan="3">m_46</TD></TR>
+  </TABLE>>];
+m_43-> m_46 [label=" 0,2"];
+  m_47 [shape=none label=<
+ <TABLE border="0" cellspacing="10" cellpadding="10" style="rounded" bgcolor="black">
+  <TR>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">O</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="white">X</TD>
+  <TD bgcolor="white">O</TD>
+  <TD bgcolor="white">X</TD>
+  </TR>
+  <TR>
+  <TD bgcolor="green" colspan="3">m_47</TD></TR>
+  </TABLE>>];
+m_46-> m_47 [label=" 0,1"];
+m_47 [xlabel="-1"]
+m_46 [xlabel="-1"]
+m_43 [xlabel="0"]
+m_0 [xlabel="0"]
+m_init [xlabel="0"]
+}
