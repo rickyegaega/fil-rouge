@@ -5,12 +5,12 @@ CFLAGS = -lm
 CC	 = gcc
 
 all: $(NAME)
-	./best "994o4999999 35 x" 6
+	./best "6xoxOOOX2xo1ox1oXx2xo4oox4ox 84 o" 35
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
 test:	$(NAME)
-	./best "6xoxOOOX2xo1ox1oXx2xo4oox4ox 84 o" 5
+	./best "o899999999 11 x" 35
 
 clean:
 	rm -f $(OBJS)
