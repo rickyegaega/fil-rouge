@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <math.h>
 #include "score.h"
 
 FILE* fp;
@@ -18,19 +17,6 @@ char player;
 int pc_block=100;
 int pc_cell=100;
 int max_depth;
-
-
-
-
-int max(int* table,int size){
-    int n=-1000000;
-    for (int i=0; i<size; i++){
-        if (table[i]>n){
-            n=table[i];
-        }
-    }
-    return n;
-}
 
 void gen_minitable(char* table){
     int n = 0;
@@ -176,10 +162,10 @@ int main(int argc, char* argv[]){
         printf("please enter correctly\n");
         return 1;
     }
-    max_depth=5;//need to be 2x+1
-    int time=atoi(argv[2]);
-    if(time>=6){
-        max_depth=((int)ceil((log(time/250))+3)*2) + 1;
+    if(atoi(argv[2])<6){
+        max_depth=5;
+    }else{
+        max_depth=6;
     }
     change_type(strtok(argv[1], " "));
     tmp = atoi(strtok(NULL, " "));
@@ -187,7 +173,6 @@ int main(int argc, char* argv[]){
     cell = tmp%10 -1;
     start_player(strtok(NULL, " ")[0]);
     score(full_table,block,cell,0);
-    // printf("max score is %d\n",score(full_table,block,cell,0));
     printf("%d%d\n",pc_block+1,pc_cell+1);
 
     // // 終了時間を記録
