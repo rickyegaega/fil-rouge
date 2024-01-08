@@ -25,12 +25,10 @@ char same(int x, int y, int z, char* table){
             return start-32;
         }else if(table[x]==opponent){
             return opponent-32;
-        }else if(table[x]==start+32){
-            printf("you win\n");
-            exit(0);
-        }else if(table[x]==opponent+32){
-            printf("you lose\n");
-            exit(0);
+        }else if(table[x]==start-32){
+            return start;
+        }else if(table[x]==opponent-32){
+            return opponent;
         }
     }
     return '.';
@@ -246,17 +244,17 @@ int score(char table[9][9], int block, int cell, int depth){
                     //ビンゴの塗りつぶし
                     tmp_table[i][0]=judge(tmp_table[i]);
                     tmp=score(tmp_table,i,j,depth+1);
-                    if(tmp*(-1*mul)>score_tmp*(mul*-1)){
+                    if(tmp*(-1*mul)>=score_tmp*(mul*-1)){
                         // printf("%c choose %d%d depth %d score %d\n",player, i,j,depth,tmp);
-                        best_block=i;
-                        best_cell=j;
                         score_tmp=tmp;
+                        if(depth==0){
+                            pc_block=i;
+                            pc_cell=j;
+                        }
                     }
                 }
             }
         }
-        pc_block=best_block;
-        pc_cell=best_cell;
         if(depth==0){
             return score_tmp;
         }
@@ -273,7 +271,7 @@ int score(char table[9][9], int block, int cell, int depth){
                 //ビンゴの塗りつぶし
                 tmp_table[cell][0]=judge(tmp_table[cell]);
                 tmp=score(tmp_table,cell,i,depth+1);
-                if(tmp*(mul*-1)>score_tmp*(mul*-1)){
+                if(tmp*(mul*-1)>=score_tmp*(mul*-1)){
                     // printf("%c choose %d%d depth %d score %d\n",player,cell,i,depth,tmp);
                     score_tmp=tmp;
                     if(depth==0){
